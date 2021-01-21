@@ -3,10 +3,13 @@ import cors from "cors";
 import knex from "knex";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
+import createStudent from "./endpoints/createStudent";
+import createTeacher from "./endpoints/createTeacher";
+
 
 dotenv.config()
 
-const connection = knex({
+export const connection = knex({
     client: "mysql",
     connection: {
         host: process.env.DB_HOST,
@@ -21,6 +24,9 @@ const app: Express = express()
 
 app.use(express.json())
 app.use(cors())
+
+app.put("/student", createStudent)
+app.put("/teacher", createTeacher)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

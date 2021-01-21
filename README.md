@@ -31,3 +31,36 @@ As funcionalidades básicas são:
 → Adicionar docente na turma;
 
 → Pegar a idade de algum estudante a partir do id
+
+### TABLES:
+
+CREATE TABLE Mission (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    module ENUM ("1", "2", "3", "4", "5", "6", "7", "UNDEFINED") DEFAULT "UNDEFINED",
+    period ENUM("FULLTIME", "NIGHTTIME"),
+    teacher_list VARCHAR(255) NOT NULL,
+    student_list VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Student (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR (255) UNIQUE NOT NULL,
+    birth_date DATE NOT NULL,
+    hobbies VARCHAR(255) NOT NULL,
+    mission_id INT,
+    FOREIGN KEY (mission_id) REFERENCES Mission(id)
+);
+
+CREATE TABLE Teacher (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR (255) UNIQUE NOT NULL,
+    birth_date DATE NOT NULL,
+    specialty ENUM("REACT", "REDUX", "CSS", "TESTES", "TYPESCRIPT", "POO", "BACKEND"),
+    mission_id INT,
+    FOREIGN KEY (mission_id) REFERENCES Mission(id)
+);
