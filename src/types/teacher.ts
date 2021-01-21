@@ -1,11 +1,11 @@
 export enum Specialty {
-    REACT = "React",
-    REDUX = "Redux",
+    REACT = "REACT",
+    REDUX = "REDUX",
     CSS = "CSS",
-    TESTES = "Testes",
-    TYPESCRIPT = "Typescript",
+    TESTES = "TESTES",
+    TYPESCRIPT = "TYPESCRIPT",
     POO = "POO",
-    BACKEND = "Backend"
+    BACKEND = "BACKEND"
 }
 
 export type Teacher = {

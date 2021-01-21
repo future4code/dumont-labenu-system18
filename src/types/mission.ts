@@ -10,8 +10,8 @@ export enum MissionModules {
 }
 
 export enum Period {
-    FULLTIME = "FullTime",
-    NIGHTTIME = "NightTime"
+    FULLTIME = "FULLTIME",
+    NIGHTTIME = "NIGHTTIME"
 }
 
 export type Mission = {
