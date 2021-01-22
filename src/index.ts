@@ -5,6 +5,9 @@ import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import createStudent from "./endpoints/createStudent";
 import createTeacher from "./endpoints/createTeacher";
+import createMission from "./endpoints/createMission";
+import { addStudentOnMission } from "./endpoints/addStudentOnMission";
+import { addTeacherOnMission } from "./endpoints/addTeacherOnMission";
 
 
 dotenv.config()
@@ -25,8 +28,11 @@ const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
-app.put("/student", createStudent)
-app.put("/teacher", createTeacher)
+app.post("/student", createStudent)
+app.post("/teacher", createTeacher)
+app.post("/mission", createMission)
+app.put("/student_mission", addStudentOnMission)
+app.put("/teacher_mission", addTeacherOnMission)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

@@ -6,7 +6,7 @@ export enum MissionModules {
     MODULE5 = "5",
     MODULE6 = "6",
     MODULE7 = "7",
-    UNDEFINED = "Undefined"
+    UNDEFINED = "UNDEFINED"
 }
 
 export enum Period {
@@ -19,8 +19,8 @@ export type Mission = {
     name: String,
     start_date: String,
     end_date: String,
-    module: MissionModules,
-    period: Period,
-    teacher_list: String,
-    student_list: String
+    module?: MissionModules,
+    period?: Period,
+    teacher_list?: String,
+    student_list?: String
 }
