@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import insertStudent from "../data/insertStudent";
-import { Student } from "../types/student";
+
 
 export default async function createStudent(
     req: Request, 
