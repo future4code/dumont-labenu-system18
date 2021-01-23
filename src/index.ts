@@ -8,6 +8,7 @@ import createTeacher from "./endpoints/createTeacher";
 import createMission from "./endpoints/createMission";
 import { addStudentOnMission } from "./endpoints/addStudentOnMission";
 import { addTeacherOnMission } from "./endpoints/addTeacherOnMission";
+import getStudentAgeById from "./endpoints/getStudentAgeById";
 
 
 dotenv.config()
@@ -33,6 +34,7 @@ app.post("/teacher", createTeacher)
 app.post("/mission", createMission)
 app.put("/student_mission", addStudentOnMission)
 app.put("/teacher_mission", addTeacherOnMission)
+app.get("/student/:id", getStudentAgeById)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

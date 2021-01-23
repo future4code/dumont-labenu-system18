@@ -1,4 +1,5 @@
 import { connection } from "../index";
+import convertDataFormat from "../utils/convertDataFormat"
 
 
 export default async function insertStudent(
@@ -10,7 +11,7 @@ export default async function insertStudent(
     await connection.insert({
         name,
         email,
-        birth_date,
+        birth_date: convertDataFormat(birth_date),
         hobbies
     }).into('Student')
 }
